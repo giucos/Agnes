@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowMouse : MonoBehaviour {
 
     Vector3 mousePosition;
-    public float moveSpeed = 0.01f;
+    private float moveSpeed = 0.01f;
     Rigidbody2D rb;
     Vector2 position = new Vector2(0f, 0f);
 
@@ -18,7 +18,6 @@ public class FollowMouse : MonoBehaviour {
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
-
 
     }
 
