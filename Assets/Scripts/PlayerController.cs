@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour {
     public Text winText;
 
     Rigidbody2D rb;
-    Vector3 mousePosition;
-    Vector2 position = new Vector2(0f, 0f);
+    Vector2 mousePosition;
+    Vector2 position = new Vector2(2.77f, -6.16f);
 
     void Start()
     {
