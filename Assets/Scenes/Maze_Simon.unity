@@ -11853,11 +11853,12 @@ GameObject:
   - component: {fileID: 1716956089}
   - component: {fileID: 1716956093}
   - component: {fileID: 1716956091}
-  - component: {fileID: 1716956090}
   - component: {fileID: 1716956092}
+  - component: {fileID: 1716956094}
+  - component: {fileID: 1716956090}
   m_Layer: 0
   m_Name: EnemyOne
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11885,10 +11886,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716956088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e027f672046eba14ab379e7a8fe5a1bd, type: 3}
+  m_Script: {fileID: 11500000, guid: c365473b7420cf144b9df95afcd1b012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.1
+  movementSpeed: 0.03
 --- !u!50 &1716956091
 Rigidbody2D:
   serializedVersion: 4
@@ -11976,6 +11977,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1716956094
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716956088}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.09177246}
+  serializedVersion: 2
+  m_Radius: 0.57614744
 --- !u!4 &1823894656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 736618672674826964, guid: 36b60793c6e2b1247aac2017e508a3b8,
@@ -15934,7 +15951,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051169582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.16, y: -19.42, z: 0}
+  m_LocalPosition: {x: -1.51, y: -6.34, z: 0}
   m_LocalScale: {x: 0.8808745, y: 0.8808745, z: 0.8808745}
   m_Children: []
   m_Father: {fileID: 0}
