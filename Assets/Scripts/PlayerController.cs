@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -40,6 +41,9 @@ public class PlayerController : MonoBehaviour {
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
+        }
+        else if (other.gameObject.CompareTag("Enemy")){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
