@@ -11852,9 +11852,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1716956089}
   - component: {fileID: 1716956093}
-  - component: {fileID: 1716956092}
   - component: {fileID: 1716956091}
   - component: {fileID: 1716956090}
+  - component: {fileID: 1716956092}
   m_Layer: 0
   m_Name: EnemyOne
   m_TagString: Untagged
@@ -11870,8 +11870,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716956088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7422152, y: -7.520709, z: 71.66724}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.7683, y: -7.5762, z: 71.66724}
+  m_LocalScale: {x: 0.693761, y: 0.71076816, z: 0.7521195}
   m_Children: []
   m_Father: {fileID: 1216116367}
   m_RootOrder: 0
@@ -11901,7 +11901,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.38012958
+  m_Mass: 0.12474061
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -11910,8 +11910,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!60 &1716956092
-PolygonCollider2D:
+--- !u!58 &1716956092
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11923,26 +11923,9 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96875, y: 0.78125}
-    newSize: {x: 0.78125, y: 0.625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.39015675, y: -0.33137417}
-      - {x: -0.4161482, y: -0.38737583}
-      - {x: 0.4551344, y: -0.38412762}
-      - {x: 0.33817387, y: -0.11835098}
-      - {x: 0.16969967, y: 0.17743587}
-      - {x: 0.06620312, y: 0.38412666}
-      - {x: -0.028923035, y: 0.38087845}
-      - {x: -0.25664902, y: -0.049352646}
+  m_Offset: {x: 0.0000009509869, y: -0.08590518}
+  serializedVersion: 2
+  m_Radius: 0.2803503
 --- !u!212 &1716956093
 SpriteRenderer:
   m_ObjectHideFlags: 0
