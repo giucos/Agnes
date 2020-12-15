@@ -35,6 +35,12 @@ public class EnemyControllerBase : MonoBehaviour
         setNewDirection();
     }
 
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.CompareTag("Safezone")){
+            setNewDirection();
+        }
+    }
+
     void FixedUpdate()
     {
         this.transform.position += directions[direction] * movementSpeed;
