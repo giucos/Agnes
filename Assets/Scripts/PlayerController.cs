@@ -2,24 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
     private float moveSpeed = 0.01f;
     private int count;
-    public Text countText;
-    public Text winText;
+    private int itemCounter = 0;
+    //public Text countText;
+    //public Text winText;
 
     Rigidbody2D rb;
     Vector2 mousePosition;
     Vector2 position = new Vector2(2.77f, -6.16f);
 
+    public GameObject[] items;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         count = 0;
-        winText.text = "";
-        SetCountText();
+        //winText.text = "";
+        //SetCountText();
+        items = GameObject.FindGameObjectsWithTag("Item");
     }
 
     void Update()
@@ -37,20 +42,29 @@ public class PlayerController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Item")){
-            other.gameObject.SetActive(false);
-            count = count + 1;
-            SetCountText();
+
+            if(items[itemCounter].name == other.name && itemCounter < items.Length)
+            {
+                other.gameObject.SetActive(false);
+                itemCounter++;
+                
+            }           
+
+            //SetCountText();
+        }
+        else if (other.gameObject.CompareTag("Enemy")){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
-    void SetCountText()
-    {
-        countText.text = "Count: " + count.ToString();
-        if (count >= 3)
-        {
-            winText.text = "You Win!";
-        }
-    }
+    //void SetCountText()
+    //{
+    //    countText.text = "Count: " + count.ToString();
+    //    if (count >= 3)
+    //    {
+    //        winText.text = "You Win!";
+    //    }
+    //}
 }
 
 
