@@ -3324,7 +3324,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 0}
   m_Children: []
   m_Father: {fileID: 470395400}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &464474209
 CircleCollider2D:
@@ -3422,7 +3422,7 @@ PrefabInstance:
     - target: {fileID: 4268611593723985173, guid: 36b60793c6e2b1247aac2017e508a3b8,
         type: 3}
       propertyPath: m_TagString
-      value: Item
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b60793c6e2b1247aac2017e508a3b8, type: 3}
@@ -4634,6 +4634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9530c3d28ab1de44b8d8406b4264249b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: []
 --- !u!212 &585730086
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24523,7 +24524,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470395400}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1433961524
 CircleCollider2D:
@@ -24621,7 +24622,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 470395400}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1539442494
 CircleCollider2D:
@@ -24753,7 +24754,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 470395400}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1541987570
 CircleCollider2D:
@@ -24885,7 +24886,7 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 0}
   m_Children: []
   m_Father: {fileID: 470395400}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1591658445
 CircleCollider2D:
