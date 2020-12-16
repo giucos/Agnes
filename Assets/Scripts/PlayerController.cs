@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
     {
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
+        position = Vector2.MoveTowards(transform.position, mousePosition, moveSpeed);
     }
 
     void FixedUpdate()
