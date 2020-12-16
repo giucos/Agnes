@@ -41,21 +41,11 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        
-
-        Debug.Log(items[0].name);
-        Debug.Log(items[1].name);
-        Debug.Log(items[2].name);
-        Debug.Log(items[3].name);
-        Debug.Log(items[4].name);
-        Debug.Log(items[5].name);
-
         if (other.gameObject.CompareTag("Item")){
 
             if(items[itemCounter].name == other.name && itemCounter < items.Length)
             {
                 other.gameObject.SetActive(false);
-                Debug.Log("Collected: " + items[itemCounter].name);
                 itemCounter++;
                 
             }           
