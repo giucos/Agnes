@@ -8,19 +8,23 @@ public class PlayerController : MonoBehaviour {
 
     private float moveSpeed = 0.01f;
     private int count;
-    public Text countText;
-    public Text winText;
+    private int itemCounter = 0;
+    //public Text countText;
+    //public Text winText;
 
     Rigidbody2D rb;
     Vector2 mousePosition;
     Vector2 position = new Vector2(2.77f, -6.16f);
 
+    public GameObject[] items;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         count = 0;
-        winText.text = "";
-        SetCountText();
+        //winText.text = "";
+        //SetCountText();
+        items = GameObject.FindGameObjectsWithTag("Item");
     }
 
     void Update()
@@ -37,24 +41,40 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        
+
+        Debug.Log(items[0].name);
+        Debug.Log(items[1].name);
+        Debug.Log(items[2].name);
+        Debug.Log(items[3].name);
+        Debug.Log(items[4].name);
+        Debug.Log(items[5].name);
+
         if (other.gameObject.CompareTag("Item")){
-            other.gameObject.SetActive(false);
-            count = count + 1;
-            SetCountText();
+
+            if(items[itemCounter].name == other.name && itemCounter < items.Length)
+            {
+                other.gameObject.SetActive(false);
+                Debug.Log("Collected: " + items[itemCounter].name);
+                itemCounter++;
+                
+            }           
+
+            //SetCountText();
         }
         else if (other.gameObject.CompareTag("Enemy")){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
-    void SetCountText()
-    {
-        countText.text = "Count: " + count.ToString();
-        if (count >= 3)
-        {
-            winText.text = "You Win!";
-        }
-    }
+    //void SetCountText()
+    //{
+    //    countText.text = "Count: " + count.ToString();
+    //    if (count >= 3)
+    //    {
+    //        winText.text = "You Win!";
+    //    }
+    //}
 }
 
 
