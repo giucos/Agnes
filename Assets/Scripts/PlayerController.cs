@@ -6,11 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-    private float moveSpeed = 0.03f;
-    private int count;
+    private float moveSpeed = 0.2f;
     private int itemCounter = 0;
-    //public Text countText;
-    //public Text winText;
+    public Text blumentopfText, gräsliText, giesskanneText, kompostText, rasenmäherText, schaufelText;
 
     Rigidbody2D rb;
     Vector2 mousePosition;
@@ -21,10 +19,13 @@ public class PlayerController : MonoBehaviour {
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        count = 0;
-        //winText.text = "";
-        //SetCountText();
         items = GameObject.FindGameObjectsWithTag("Item");
+        blumentopfText.text = "1. Pflücke die Rose";
+        gräsliText.text = "2. Ernte das Gras";
+        giesskanneText.text = "3. Giesse die Blumen";
+        kompostText.text = "4. Kompostiere den Abfall";
+        rasenmäherText.text = "5. Mähe den Rasen";
+        schaufelText.text = "6. Hole die Schaufel";
     }
 
     void Update()
@@ -41,30 +42,44 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Item")){
+        if (other.gameObject.CompareTag("Item")) {
 
-            if(items[itemCounter].name == other.name && itemCounter < items.Length)
+            if (items[itemCounter].name == other.name && itemCounter < items.Length)
             {
                 other.gameObject.SetActive(false);
+                CheckItemList();               
                 itemCounter++;
-                
-            }           
+            }
 
-            //SetCountText();
         }
-        else if (other.gameObject.CompareTag("Enemy")){
+        else if (other.gameObject.CompareTag("Enemy")) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
-    //void SetCountText()
-    //{
-    //    countText.text = "Count: " + count.ToString();
-    //    if (count >= 3)
-    //    {
-    //        winText.text = "You Win!";
-    //    }
-    //}
+    void CheckItemList()
+    { 
+        if (itemCounter == 0)
+        {
+            blumentopfText.text = "1. Pflücke die Rose" + "\u2714";
+        } else if (itemCounter == 1)
+        {
+            gräsliText.text = "2. Ernte das Gras" + "\u2714";
+        } else if (itemCounter == 2)
+        {
+            giesskanneText.text = "3. Giesse die Blumen" + "\u2714";
+        } else if (itemCounter == 3)
+        {
+            kompostText.text = "4. Kompostiere den Abfall" + "\u2714";
+        } else if (itemCounter == 4)
+        {
+            rasenmäherText.text = "5. Mähe den Rasen" + "\u2714";
+        } else if (itemCounter == 5)
+        {
+            schaufelText.text = "6. Hole die Schaufel" + "\u2714";
+        }
+    }
+
 }
 
 
