@@ -8,6 +8,7 @@ public class EnemyRandom : EnemyControllerBase
      
     override public void setNewDirection(){
         int oldDirection = direction;
+        
         do {
             direction = Random.Range(0,4);
         } while (direction == oldDirection);

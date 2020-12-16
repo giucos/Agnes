@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     private float moveSpeed = 0.03f;
     private int count;
     private int itemCounter = 0;
+    private bool HasJoker = true;
     //public Text countText;
     //public Text winText;
 
@@ -47,13 +48,16 @@ public class PlayerController : MonoBehaviour {
             {
                 other.gameObject.SetActive(false);
                 itemCounter++;
-                
             }           
 
             //SetCountText();
         }
         else if (other.gameObject.CompareTag("Enemy")){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (HasJoker){
+                HasJoker = false;
+            } else {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyTurnRight : EnemyControllerBase
 {
     private int directionChangeCounter = 0;
+    
     override public void setNewDirection(){
         directionChangeCounter++;
 
