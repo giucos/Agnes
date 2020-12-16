@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-    private float moveSpeed = 0.01f;
+    private float moveSpeed = 0.03f;
     private int count;
     private int itemCounter = 0;
     //public Text countText;
