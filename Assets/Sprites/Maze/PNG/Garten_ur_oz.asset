@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Garten_o_l
+  m_Name: Garten_ur_oz
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 634f1cfb5e725ba468d1a931e96e1755, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 661c261865eb8d147912b29f8358e62b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
