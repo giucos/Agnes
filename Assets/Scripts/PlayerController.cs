@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-    private float moveSpeed = 0.2f;
+    private float moveSpeed = 0.05f;
     private int itemCounter = 0;
 
     public Text blumentopfText, gräsliText, giesskanneText, kompostText, rasenmäherText, schaufelText;
@@ -54,18 +54,12 @@ public class PlayerController : MonoBehaviour {
                 itemCounter++;
 
             }
-            }           
-
-
-        }
-
-        else if (other.gameObject.CompareTag("Enemy")){
+        } else if (other.gameObject.CompareTag("Enemy")){
             if (HasJoker){
                 HasJoker = false;
             } else {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
-
         }
     }
 
