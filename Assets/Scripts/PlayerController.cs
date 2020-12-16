@@ -8,7 +8,10 @@ public class PlayerController : MonoBehaviour {
 
     private float moveSpeed = 0.2f;
     private int itemCounter = 0;
+
     public Text blumentopfText, gräsliText, giesskanneText, kompostText, rasenmäherText, schaufelText;
+
+    private bool HasJoker = true;
 
     Rigidbody2D rb;
     Vector2 mousePosition;
@@ -49,11 +52,20 @@ public class PlayerController : MonoBehaviour {
                 other.gameObject.SetActive(false);
                 CheckItemList();               
                 itemCounter++;
+
             }
+            }           
+
 
         }
-        else if (other.gameObject.CompareTag("Enemy")) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        else if (other.gameObject.CompareTag("Enemy")){
+            if (HasJoker){
+                HasJoker = false;
+            } else {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
         }
     }
 

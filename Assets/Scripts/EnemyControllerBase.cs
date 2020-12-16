@@ -1,20 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class EnemyControllerBase : MonoBehaviour
 {
     private const int MAX_STOP_FRAME_COUNT = 20;
     public float movementSpeed = 0.09f; 
     internal int direction;
     internal static Vector3[] directions = { Vector3.up, Vector3.right, Vector3.down, Vector3.left };
-    Vector2 position = new Vector2(8.4f, -12.1f);
+    
     private Vector3 oldPosition;
+
     private int StillFrameCounter = 0;
     
     void Start()
     {
         direction = 0; 
-        oldPosition = position;
+        oldPosition = this.transform.position;
     }
 
     void Update()
