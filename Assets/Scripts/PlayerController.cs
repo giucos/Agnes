@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-    private float moveSpeed = 0.01f;
+    private float moveSpeed = 0.03f;
     private int count;
     private int itemCounter = 0;
     //public Text countText;
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
     {
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
+        position = Vector2.MoveTowards(transform.position, mousePosition, moveSpeed);
     }
 
     void FixedUpdate()
