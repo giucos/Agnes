@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
 
     Rigidbody2D rb;
     Vector2 mousePosition;
-    Vector2 position = new Vector2(2.77f, -6.16f);
+    Vector2 position = new Vector2(1.93f, -14.83f);
 
     public GameObject[] items;
     
@@ -56,17 +56,21 @@ public class PlayerController : MonoBehaviour {
             {
                 other.gameObject.SetActive(false);
                 SoundManager.PlaySound("item");
-                //SoundManager.MuteMainTheme();
-                //SoundManager.PlaySound("gameOver");
                 CheckItemList();               
                 itemCounter++;
+            }
+
+            if (itemCounter == 1){
+                GameController.Win();
             }
         } else if (other.gameObject.CompareTag("Enemy")){
             if (HasJoker){
                 GameController.UseJoker();
                 HasJoker = false;
             } else {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SoundManager.MuteMainTheme();
+                SoundManager.PlaySound("gameOver");
+                GameController.GameOver();
             }
         }
     }
