@@ -16,11 +16,11 @@ public class EnemySprint : EnemyControllerBase
         if (directionChangeCounter % 10 == 0)
         {
             this.movementSpeed *= 1.5f;
-            Debug.Log("SpeedChange" + movementSpeed.ToString());
+            // Debug.Log("SpeedChange" + movementSpeed.ToString());
         } else if(directionChangeCounter % 10 == 1)
         {
             this.movementSpeed /= 1.5f;
-            Debug.Log("SpeedBack" + movementSpeed.ToString());
+            // Debug.Log("SpeedBack" + movementSpeed.ToString());
         }
 
         directionChangeCounter++;

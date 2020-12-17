@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
+    private GameControl GameController;
     private float moveSpeed = 0.05f;
     private int itemCounter = 0;
+    public GameObject JokerText;
 
     public Text blumentopfText, gräsliText, giesskanneText, kompostText, rasenmäherText, schaufelText;
 
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
+        GameController = GetComponent<GameControl>();
         rb = GetComponent<Rigidbody2D>();
         items = GameObject.FindGameObjectsWithTag("Item");
         blumentopfText.text = "1. Pflücke die Rose";
@@ -28,7 +31,8 @@ public class PlayerController : MonoBehaviour {
         giesskanneText.text = "3. Giesse die Blumen";
         kompostText.text = "4. Kompostiere den Abfall";
         rasenmäherText.text = "5. Mähe den Rasen";
-        schaufelText.text = "6. Hole die Schaufel";
+        schaufelText.text = "6. Hole die Schaufel";  
+
     }
 
     void Update()
@@ -52,10 +56,10 @@ public class PlayerController : MonoBehaviour {
                 other.gameObject.SetActive(false);
                 CheckItemList();               
                 itemCounter++;
-
             }
         } else if (other.gameObject.CompareTag("Enemy")){
             if (HasJoker){
+                GameController.UseJoker();
                 HasJoker = false;
             } else {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -85,7 +89,6 @@ public class PlayerController : MonoBehaviour {
             schaufelText.text = "6. Hole die Schaufel" + "\u2714";
         }
     }
-
 }
 
 
