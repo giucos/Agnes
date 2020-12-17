@@ -57,8 +57,6 @@ public class PlayerController : MonoBehaviour {
             {
                 other.gameObject.SetActive(false);
                 SoundManager.PlaySound("item");
-                //SoundManager.MuteMainTheme();
-                //SoundManager.PlaySound("gameOver");
                 CheckItemList();               
                 itemCounter++;
             }
