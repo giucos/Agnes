@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour {
     private GameControl GameController;
     private float moveSpeed = 0.05f;
     private int itemCounter = 0;
-    public GameObject JokerText;
 
     public Text blumentopfText, gräsliText, giesskanneText, kompostText, rasenmäherText, schaufelText;
 
