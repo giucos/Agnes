@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
                 itemCounter++;
             }
 
-            if (itemCounter == 1){
+            if (itemCounter == 6){
                 GameController.Win();
             }
         } else if (other.gameObject.CompareTag("Enemy")){
