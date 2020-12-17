@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip mainThemeSound, itemSound, gameOver;
+    public static AudioClip mainThemeSound, itemSound, gameOver, win;
     static AudioSource audioSrc;
 
     void Start()
@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
         mainThemeSound = Resources.Load<AudioClip>("mainTheme");
         itemSound = Resources.Load<AudioClip>("item");
         gameOver = Resources.Load<AudioClip>("gameOver");
+        win = Resources.Load<AudioClip>("win");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -28,6 +29,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "gameOver":
                 audioSrc.PlayOneShot(gameOver);
+                break;
+            case "win":
+                audioSrc.PlayOneShot(win);
                 break;
         }
     }
