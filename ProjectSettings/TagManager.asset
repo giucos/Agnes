@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Safezone
   - JokerText
+  - OverlayPanel
+  - RestartButton
   layers:
   - Default
   - TransparentFX
