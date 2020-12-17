@@ -26,21 +26,13 @@ public class PlayerController : MonoBehaviour {
         GameController = GetComponent<GameControl>();
         rb = GetComponent<Rigidbody2D>();
         items = GameObject.FindGameObjectsWithTag("Item");
-<<<<<<< Updated upstream
-        blumentopfText.text = "1. Pflücke die Rose";
-        gräsliText.text = "2. Ernte das Gras";
-        giesskanneText.text = "3. Giesse die Blumen";
-        kompostText.text = "4. Kompostiere den Abfall";
-        rasenmäherText.text = "5. Mähe den Rasen";
-        schaufelText.text = "6. Hole die Schaufel";  
-=======
+
         blumentopfText.text = "1. Rose";
         gräsliText.text = "2. Gras";
         giesskanneText.text = "3. Giessekanne";
         kompostText.text = "4. Kompost";
         rasenmäherText.text = "5. Rasenmäher";
         schaufelText.text = "6. Schaufel";   
->>>>>>> Stashed changes
 
     }
 
@@ -65,7 +57,7 @@ public class PlayerController : MonoBehaviour {
             {
                 other.gameObject.SetActive(false);
                 SoundManager.PlaySound("item");
-                SoundManager.MuteMainTheme();
+                //SoundManager.MuteMainTheme();
                 //SoundManager.PlaySound("gameOver");
                 CheckItemList();               
                 itemCounter++;
