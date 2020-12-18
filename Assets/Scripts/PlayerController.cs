@@ -28,10 +28,10 @@ public class PlayerController : MonoBehaviour {
 
         blumentopfText.text = "1. Rose";
         gräsliText.text = "2. Gras";
-        giesskanneText.text = "3. Giessekanne";
+        schaufelText.text = "3. Schaufel";
         kompostText.text = "4. Kompost";
         rasenmäherText.text = "5. Rasenmäher";
-        schaufelText.text = "6. Schaufel";   
+        giesskanneText.text = "6. Giesskanne";   
 
     }
 
@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Item")) {
-
             if (items[itemCounter].name == other.name && itemCounter < items.Length)
             {
                 other.gameObject.SetActive(false);
@@ -85,7 +84,7 @@ public class PlayerController : MonoBehaviour {
             gräsliText.text = "2. Gras" + "\u2714";
         } else if (itemCounter == 2)
         {
-            giesskanneText.text = "3. Giessekanne" + "\u2714";
+            schaufelText.text = "3. Schaufel" + "\u2714";
         } else if (itemCounter == 3)
         {
             kompostText.text = "4. Kompost" + "\u2714";
@@ -94,7 +93,7 @@ public class PlayerController : MonoBehaviour {
             rasenmäherText.text = "5. Rasenmäher" + "\u2714";
         } else if (itemCounter == 5)
         {
-            schaufelText.text = "6. Schaufel" + "\u2714";
+            giesskanneText.text = "6. Giesskanne" + "\u2714";
         }
     }
 }
